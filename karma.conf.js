@@ -53,14 +53,19 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
         autoWatch: false,
 
-        browsers: ['Chrome'],
-        // browsers: ['ChromeHeadlessNoSandbox'],
-        // customLaunchers: {
-        //     ChromeHeadlessNoSandbox: {
-        //     base: 'ChromeHeadless',
-        //     flags: ['--no-sandbox']
-        //     }        
-        // },        
+        captureTimeout: 60000,
+        browserDisconnectTimeout: 60000,
+        browserDisconnectTolerance: 3,
+        browserNoActivityTimeout: 60000,
+
+        // browsers: ['Chrome'],
+        browsers: ['ChromeHeadlessNoSandbox'],
+        customLaunchers: {
+            ChromeHeadlessNoSandbox: {
+            base: 'ChromeHeadless',
+            flags: ['--no-sandbox']
+            }        
+        },        
 
         singleRun: true,
     });
